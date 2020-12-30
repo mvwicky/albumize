@@ -1,0 +1,15 @@
+{
+    "name": "albumize-frontend",
+    "version": "0.0.1",
+    "description": "The frontend code for albumize",
+    "main": "index.js",
+    "author": "Michael Van Wickle <me@michaelvanwickle.com>",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "autoprefixer": "^10.1.0",
+        "postcss": "^8.2.2",
+        "postcss-import": "^14.0.0",
+        "tailwindcss": "^2.0.2"
+    }
+}
