@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title|default("Albumized") }}</title>
+  {% include "normalize.jinja" %}
+  <style>
+    body {
+      background-color: #bbc3ca;
+      padding: 1rem 0 2rem;
+    }
+    .container {
+      background-color: #fff;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem 12rem 2rem;
+    }
+    .container > * + * {
+      margin-top: 1.5rem;
+    }
+    .images {
+      background-color: #9c9;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 0.25rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="images">
+      {% for image in images %}
+        <div class="image">
+          <figure>
+            <img src="{{ image.file_uri }}" alt="{{ image }}">
+            <figcaption>{{ image.rel }}</figcaption>
+          </figure>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
